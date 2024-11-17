@@ -131,8 +131,11 @@ if st.session_state.user_prompt:
     selection_content.empty()
     if not st.session_state.update_record:
         with st.spinner('Looking for answers...'):
-            search_agent = SearchAgent(st.session_state.item_list)
-            st.session_state.results = search_agent.invoke(st.session_state.user_prompt)
+            try:
+                search_agent = SearchAgent(st.session_state.item_list)
+                st.session_state.results = search_agent.invoke(st.session_state.user_prompt)
+            except Exception as e:
+                st.error("There seems to have been some error, but running it again often solves it!", icon = '🚨')
     
     new_page = st.empty()
     result_df = pd.DataFrame(st.session_state.results)
