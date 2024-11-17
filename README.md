@@ -14,10 +14,11 @@ git clone https://github.com/debdeepsanyal/Seeker-Agent.git
 cd Seeker-Agent
 touch .env
 echo "OPENAI_API_KEY=<your OpenAI API KEY>\nSERPAPI_API_KEY=<your SerpAPI API key>" > .env
+pip3 install -r requirements.txt
 streamlit run main.py
 ```
 
-and, that's all! Executing the above few lines in your terminal opens up a functional and user-friendly interface, which gets all your done in a few clicks. Ensure putting in your actual API keys in the 5th line of the terminal commands above! 
+and, that's all! Executing the above few lines in your terminal opens up a functional and user-friendly interface, which gets all your done in a few clicks. If the Python version on your machine is Python 2, use `pip` in the 6th line instead of `pip3`. Ensure putting in your actual API keys in the 5th line of the terminal commands above! 
 
 ### Key Features 📌
    - **No Hassle** - All the task that you want, in single clicks. No squinting of eyes around the screen to find the option which gets your work done, it's easier than you think.
