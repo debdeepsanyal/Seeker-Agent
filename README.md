@@ -17,7 +17,7 @@ echo "OPENAI_API_KEY=<your OpenAI API KEY>\nSERPAPI_API_KEY=<your SerpAPI API ke
 streamlit run main.py
 ```
 
-and, that's all! Executing the above few lines in your terminal opens up a functional and user-friendly interface, which gets all your done in a few clicks. 
+and, that's all! Executing the above few lines in your terminal opens up a functional and user-friendly interface, which gets all your done in a few clicks. Ensure putting in your actual API keys in the 5th line of the terminal commands above! 
 
 ### Key Features 📌
    - **No Hassle** - All the task that you want, in single clicks. No squinting of eyes around the screen to find the option which gets your work done, it's easier than you think.
@@ -27,7 +27,7 @@ and, that's all! Executing the above few lines in your terminal opens up a funct
    - **In a blink** - Go from opening the interface to having the search results incorporated in your data (be it your `.csv` file on your local machine or a Google Sheet) in less than 3 minutes! Thanks to multiple efficacies in code to reduce redundant API calls, it's all a breeze.
 
    - **Search Enhancement** - Google Search is actually quite an art, and you might not always be in the mood to brainstorm about what keywords to include in your query to enhance your search. No worries, we do that for you. A dedicated prompt enhancement engine analyses your prompt and modifies it to include keywords which yield better search results.
-   
+
    - **Furnished Results** - We don't leave your results half-baked. Once you have your search results, you can have it incorporated to your original file with just a single click. Your Google Sheet would magically have these new columns, and you can have an updated `.csv` file ready for download.
 
 ### Usage Notes 🚨
