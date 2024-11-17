@@ -19,6 +19,13 @@ streamlit run main.py
 
 and, that's all! Executing the above few lines in your terminal opens up a functional and user-friendly interface, which gets all your done in a few clicks. 
 
+### Key Features 📌
+   - **No Hassle** - All the task that you want, in single clicks. No squinting of eyes around the screen to find the option which gets your work done, it's easier than you think.
+   - **Multi Query** - Want to query for all the items in your column? No need to name them all, just swap in the name of a particular element with `{placeholder}`. The software will automatically generalise your query to all the elements present in your chosen column.
+   - **In a blink** - Go from opening the interface to having the search results incorporated in your data (be it your `.csv` file on your local machine or a Google Sheet) in less than 3 minutes! Thanks to multiple efficacies in code to reduce redundant API calls, it's all a breeze.
+   - **Search Enhancement** - Google Search is actually quite an art, and you might not always be in the mood to brainstorm about what keywords to include in your query to enhance your search. No worries, we do that for you. A dedicated prompt enhancement engine analyses your prompt and modifies it to include keywords which yield better search results.
+   - **Furnished Results** - We don't leave your results half-baked. Once you have your search results, you can have it incorporated to your original file with just a single click. Your Google Sheet would magically have these new columns, and you can have an updated `.csv` file ready for download.
+
 ### Usage Notes 🚨
 Due to some API restrictions, we (unfortunately) have to limit some of the utilities. The column of the file you are uploading, be it your `.csv` file or the Google Sheet, should have <= **5** unique values. Since we have to perform a Web Search for each of the values, we are limitting the same. The software can automatically detect and will notify you if your chosen column has more than the allowed number of unique values.
 
