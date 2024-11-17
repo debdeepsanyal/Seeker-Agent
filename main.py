@@ -1,13 +1,19 @@
-# healthy-bonsai-441105-m4-e55dbfc817bc.json
-import streamlit as st
-import pandas as pd
-import time 
+import os
 import json
-import threading 
-from agents import SearchAgent
-from oauth2client.service_account import ServiceAccountCredentials
 import gspread
+import pandas as pd 
+import streamlit as st
+from agents import SearchAgent
+from dotenv import load_dotenv
+from oauth2client.service_account import ServiceAccountCredentials
+load_dotenv(dotenv_path='.env')
 
+serpapi_key = os.environ['SERPAPI_API_KEY']
+openai_key = os.environ['OPENAI_API_KEY']
+
+if not openai_key or not serpapi_key:
+    st.error("Your API key(s) are missing!", icon='🚨')
+    st.stop()
 st.title("Data Retrieval Dashboard")
 col1, col2 = st.columns(2)
 
@@ -128,23 +134,6 @@ if st.session_state.user_prompt:
             search_agent = SearchAgent(st.session_state.item_list)
             st.session_state.results = search_agent.invoke(st.session_state.user_prompt)
     
-    # results = {
-    #     'Starting Year of Construction': [
-    #         '6th century A.D., specifically around 756–773 A.D. for Kailasa Temple',
-    #         '532–537 AD',
-    #         '1882'
-    #     ],
-    #     'Architect': [
-    #         'No specific individual architect, attributed to the Rashtrakuta and later Yadava dynasties',
-    #         '',
-    #         ''
-    #     ],
-    #     'Architects': [
-    #         [],
-    #         ['Isidore of Miletus', 'Anthemius of Tralles'],
-    #         ['Francisco de Paula del Villar (initial)', 'Antoni Gaudí (main)']
-    #     ]
-    # }
     new_page = st.empty()
     result_df = pd.DataFrame(st.session_state.results)
     with new_page.container():
@@ -161,6 +150,7 @@ if st.session_state.user_prompt:
                 for element in item:
                     if isinstance(element, list) : 
                         replace = str(element)
+                        replace = replace[1:-1] #removing the brackets from the string 
                         item.remove(element)
                         item.append(replace)
 
@@ -174,13 +164,3 @@ if st.session_state.user_prompt:
             updated_csv = merged_df.to_csv()
             st.table(merged_df)
             st.download_button('Download Updated CSV file', updated_csv, f'updated_{st.session_state.csv_file.name}', mime = 'text/csv')
-            
-        
-        
-
-
-        
-        
-
-        
-        
