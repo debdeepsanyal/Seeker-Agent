@@ -11,7 +11,7 @@ If you have been thinking that to have access to such ease comes with a painful 
 ```
 cd your_favourite_repository
 git clone https://github.com/debdeepsanyal/Seeker-Agent.git
-cd seeker-agent
+cd Seeker-Agent
 touch .env
 echo "OPENAI_API_KEY=<your OpenAI API KEY>\nSERPAPI_API_KEY=<your SerpAPI API key>" > .env
 streamlit run main.py
