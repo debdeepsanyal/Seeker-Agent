@@ -37,5 +37,5 @@ If you wish to connect to your Google Sheets, you need to have a `JSON keyfile`,
 
 Also ensure that before sharing the link to your Google Sheet, you have shared your Google Sheet with the `Service Account` you created (it will be something in the form of `some-name.gserviceaccount.com`), and add this account as the **Editor** to your Google Sheet. Once you have set this up, you're all set!
 
-### Link to Walkthrough
+### Link to Walkthrough 🔗
 A short [Walkthrough](https://www.loom.com/share/b6d3cec842864eb2b11bf022deb976d8?sid=58f1cd7b-14ea-4322-91e5-04bcc346320c) of the project, demonstrating the ease of use in real time.
