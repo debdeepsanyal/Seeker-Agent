@@ -1,13 +1,12 @@
 import os
-import sys
 import json
 from openai import OpenAI
 from dotenv import load_dotenv
 from serpapi import GoogleSearch
-from utils import clean_search_keys, find_subject_keys
 from langgraph.graph import StateGraph, END
-from langgraph.graph.state import CompiledStateGraph
 from typing import TypedDict, Optional, List
+from langgraph.graph.state import CompiledStateGraph
+from utils import clean_search_keys, find_subject_keys
 load_dotenv(dotenv_path='.env')
 
 serpapi_key = os.environ['SERPAPI_API_KEY']
@@ -260,7 +259,11 @@ class SearchAgent:
                 info = information_list[data]
                 for key in state["subject_keys"]:
                     if key in info:
-                        state['final_response'][key].append(info[key])
+                        if isinstance(info[key], list):
+                            hold = str(info[key])[1:-1]
+                        else:
+                            hold = info[key]
+                        state['final_response'][key].append(hold)
                     else:
                         state['final_response'][key].append('')                        
         
